@@ -1,6 +1,6 @@
 [
     {
-      "_id": "1",
+      "id": "1",
       "quntity": "2 Edited Images",
       "price": "$200",
       "img": "https://img.freepik.com/free-photo/handsome-african-guy-with-stylish-haircut-taking-photo-digital-camera_171337-1345.jpg?t=st=1650125734~exp=1650126334~hmac=091b2b6149a6201b3702fc198aad79631d15cc625cc0c2d642f08b6e1b46b416&w=1380",
@@ -9,7 +9,7 @@
 
     },
     {
-      "_id": "2",
+      "id": "2",
       "quntity": "10 Edited Images",
       "price": "$400",
       "img": "https://img.freepik.com/free-photo/attractive-young-male-photographer-walking-along-harbour-making-photos-cool-yachts-people-looking-through-camera-focused-great-shot-having-flair-photojournalism_176420-5104.jpg?w=1380",
@@ -18,7 +18,7 @@
       
     },
     {
-      "_id": "3",
+      "id": "3",
       "quntity": "100 Images",
       "price": "$500",
       "img": "https://img.freepik.com/free-photo/young-african-girl-casual-clothes-taking-picture-retro-vintage-photo-camera-isolated-blue-turquoise-wall-background-studio-people-sincere-emotions-lifestyle-concept-mock-up-copy-space_365776-6235.jpg?w=1380",

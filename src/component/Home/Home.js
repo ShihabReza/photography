@@ -22,7 +22,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-            <p className="text-center mt-5">Copyright © 2015 Bob Smith</p>
+            
         </div>
     );
 };
