@@ -15,6 +15,7 @@ const Home = () => {
                 <img style={{ width: '100%'}} src="https://img.freepik.com/free-photo/happy-women-laughing-digital-tablet_53876-129928.jpg?t=st=1650127336~exp=1650127936~hmac=2f1d91bcc163fd2796b4cfde8e26c89050d9a8c9ad95e1c170535551b31debf3&w=1380" alt="" />
             </div>
             <div className="container">
+                <h1  className="text-center mt-5">Service</h1>
                 <div className="row">
                     {
                      services.map((service)=><Service key={service.id} service={service}></Service>)

@@ -4,6 +4,7 @@ import './App.css';
 import Heder from './component/Heder/Heder';
 import { Route, Routes } from 'react-router-dom';
 import Home from './component/Home/Home';
+import Login from './component/Login/Login';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Heder></Heder>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/login'element={<Login></Login>}></Route>
       </Routes>
     </div>
   );
