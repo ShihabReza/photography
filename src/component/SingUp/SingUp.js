@@ -2,10 +2,11 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const SingUp = () => {
     return (
         <div className='w-50 mx-auto mt-5'>
             <Form>
+            
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
@@ -20,12 +21,12 @@ const Login = () => {
                 </Form.Group>
                 
                 <Button variant="dark" type="submit">
-                    Login
+                    SingUp
                 </Button>
-                <p>Alrady Acount? <span><Link to='/singup'>SingUp</Link></span> </p>
+                <p>Alrady Acount? <span><Link to='/login'>Login</Link></span> </p>
                 </Form>
         </div>
     );
 };
 
-export default Login;
+export default SingUp;

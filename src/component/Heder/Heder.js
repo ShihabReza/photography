@@ -11,7 +11,7 @@ const Heder = () => {
                         <Nav className="">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/login">Login</Nav.Link>
-                    <Nav.Link href="#pricing">SingIng</Nav.Link>
+                    <Nav.Link href="#pricing">SingUp</Nav.Link>
                 </Nav>
     </Container>
   </Navbar>
