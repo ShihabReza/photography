@@ -1,14 +1,12 @@
 
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+
 
 
 const Service = (props) => {
-    const navigate = useNavigate()
-    const handelParams = id =>{
-        navigate(`/service/${id}`)
-    }
+   
+    
     const {name,img,quntity,price,time,id} = props.service
     return (
         <div className="col-xl-4 mt-5 text-center">
@@ -26,7 +24,7 @@ const Service = (props) => {
                     {price}
                     </Card.Text>
                     
-                    <Button onClick={() =>handelParams (id)} variant="dark">CheckOut</Button>
+                    <Button variant="dark">CheckOut</Button>
                 </Card.Body>
                 </Card>
         </div>

@@ -1,15 +1,49 @@
-import React from 'react';
+
+import { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate, } from 'react-router-dom';
+import auth from '../../firebase.init';
+
 
 const SingUp = () => {
-    return (
+   
+   const emailRef = useRef ('')
+   const passwordRef = useRef ('')
+   const conFrimpasswordRef = useRef ('')
+   const navigate = useNavigate()
+
+   const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
+
+  if(user){
+    navigate('/')
+  }else{
+      error('this Is Rong')
+  }
+ 
+  
+
+    const handalSingUp = (event) =>{
+        event.preventDefault()
+        
+        const email = emailRef.current.value
+        const password = passwordRef.current.value
+        const confrimPassword = conFrimpasswordRef.current.value
+       
+        createUserWithEmailAndPassword(email,password,confrimPassword)
+    }
+   return (
         <div className='w-50 mx-auto mt-5'>
-            <Form>
+            <Form onSubmit={handalSingUp}>
             
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required/>
                     <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                     </Form.Text>
@@ -17,12 +51,17 @@ const SingUp = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control ref={conFrimpasswordRef} type="password" placeholder="Confrim Password" required/>
                 </Form.Group>
                 
                 <Button variant="dark" type="submit">
                     SingUp
                 </Button>
+               
                 <p>Alrady Acount? <span><Link to='/login'>Login</Link></span> </p>
                 </Form>
         </div>

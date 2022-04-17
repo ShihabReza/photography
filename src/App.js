@@ -8,6 +8,8 @@ import Login from './component/Login/Login';
 import SingUp from './component/SingUp/SingUp';
 import Footer from './component/Footer/Footer';
 import CheckOut from './component/CheckOut/CheckOut';
+import Blog from './component/Blog/Blog';
+
 
 function App() {
   return (
@@ -15,9 +17,9 @@ function App() {
       <Heder></Heder>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/service/:serviceId' element={<CheckOut></CheckOut>}></Route>
-        <Route path='/login'element={<Login></Login>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/singup' element={<SingUp></SingUp>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
