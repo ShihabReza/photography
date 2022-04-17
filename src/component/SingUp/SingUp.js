@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate, } from 'react-router-dom';
 import auth from '../../firebase.init';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 
 const SingUp = () => {
@@ -62,6 +63,8 @@ const SingUp = () => {
                
                 <p>Already have an account? <span><Link className='text-decoration-none' to='/login'>Login</Link></span> </p>
                 </Form>
+
+                <GoogleLogin></GoogleLogin>
         </div>
     );
 };
