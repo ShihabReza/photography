@@ -8,7 +8,9 @@ import Login from './component/Login/Login';
 import SingUp from './component/SingUp/SingUp';
 import Footer from './component/Footer/Footer';
 import CheckOut from './component/CheckOut/CheckOut';
+
 import Blog from './component/Blog/Blog';
+import RequireAuth from './component/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -20,6 +22,13 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/singup' element={<SingUp></SingUp>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/checkout' element={
+          
+            <RequireAuth>
+              <CheckOut></CheckOut>
+            </RequireAuth>
+        
+        }></Route>
       </Routes>
       <Footer></Footer>
     </div>
