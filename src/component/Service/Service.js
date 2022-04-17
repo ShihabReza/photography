@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Service = (props) => {
    
     
-    const {name,img,quntity,price,time,id} = props.service
+    const {name,img,quntity,price,time} = props.service
     return (
         <div className="col-xl-4 mt-5 text-center">
             <Card style={{ width: '18rem' }}>

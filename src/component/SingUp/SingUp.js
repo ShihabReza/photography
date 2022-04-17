@@ -22,8 +22,6 @@ const SingUp = () => {
 
   if(user){
     navigate('/')
-  }else{
-      error('this Is Rong')
   }
  
   
@@ -62,7 +60,7 @@ const SingUp = () => {
                     SingUp
                 </Button>
                
-                <p>Alrady Acount? <span><Link to='/login'>Login</Link></span> </p>
+                <p>Already have an account? <span><Link className='text-decoration-none' to='/login'>Login</Link></span> </p>
                 </Form>
         </div>
     );

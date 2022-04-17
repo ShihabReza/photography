@@ -2,13 +2,18 @@ import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 
 const Login = () => {
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const navigate = useNavigate()
+
+    const location = useLocation()
+
+    let from = location.state?.from?.pathname || "/";
 
     const [
         signInWithEmailAndPassword,
@@ -18,7 +23,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
 
       if(user){
-        navigate('/')
+        navigate(from, { replace: true });
       }
 
     const handelSubmit = (event)=>{
@@ -49,8 +54,10 @@ const Login = () => {
                     Login
                 </Button>
                
-                <p>Alrady Acount? <span><Link to='/singup'>SingUp</Link></span> </p>
+                <p>Don't have an account? <span><Link className='text-decoration-none' to='/singup'>SingUp</Link></span> </p>
                 </Form>
+
+                <GoogleLogin></GoogleLogin>
         </div>
     );
 };
