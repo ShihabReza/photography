@@ -12,11 +12,9 @@ const Home = () => {
     },[])
     return (
         <div>
-            {/* <div className="d-flex">
-            
-                <img style={{ width: '100%'}} src="https://img.freepik.com/free-photo/happy-women-laughing-digital-tablet_53876-129928.jpg?t=st=1650127336~exp=1650127936~hmac=2f1d91bcc163fd2796b4cfde8e26c89050d9a8c9ad95e1c170535551b31debf3&w=1380" alt="" />
-                
-            </div> */}
+            <div className='text-center mb-5'>
+                <img style={{width:'150px'}} className='' src="https://themes.pixelwars.org/photographer-html/images/site/logo.png" alt="" />
+            </div>
             <Carousel>
                 <Carousel.Item interval={1000}>
                     <img

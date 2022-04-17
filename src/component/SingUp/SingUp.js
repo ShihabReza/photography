@@ -1,4 +1,5 @@
 
+import { sendEmailVerification } from 'firebase/auth';
 import { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -13,16 +14,20 @@ const SingUp = () => {
    const passwordRef = useRef ('')
    const conFrimpasswordRef = useRef ('')
    const navigate = useNavigate()
+   
 
    const [
     createUserWithEmailAndPassword,
     user,
     loading,
     error,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+
+  
 
   if(user){
     navigate('/')
+    
   }
  
   
@@ -36,6 +41,7 @@ const SingUp = () => {
        
         createUserWithEmailAndPassword(email,password,confrimPassword)
     }
+    
    return (
         <div className='w-50 mx-auto mt-5'>
             <Form onSubmit={handalSingUp}>
