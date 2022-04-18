@@ -14,6 +14,7 @@ const Login = () => {
     const location = useLocation()
 
     let from = location.state?.from?.pathname || "/";
+    let erorrElement;
 
     const [
         signInWithEmailAndPassword,
@@ -21,6 +22,12 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+
+      if(error){
+        erorrElement = <div>
+            <p className='text-danger'>Erorr :{error?.message}</p>
+        </div>
+      }
 
       if(user){
         navigate(from, { replace: true });
@@ -56,7 +63,7 @@ const Login = () => {
                
                 <p>Don't have an account? <span><Link className='text-decoration-none' to='/singup'>SingUp</Link></span> </p>
                 </Form>
-
+                {erorrElement}
                 <GoogleLogin></GoogleLogin>
         </div>
     );
