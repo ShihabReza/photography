@@ -1,9 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -23,6 +26,8 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
+      const [sendPasswordResetEmail, sending, ] = useSendPasswordResetEmail(auth);
+
       if(error){
         erorrElement = <div>
             <p className='text-danger'>Erorr :{error?.message}</p>
@@ -41,6 +46,11 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
     }
     
+   const restPassword = async ()=>{
+    const email = emailRef.current.value
+    await sendPasswordResetEmail(email);
+    toast('Sent email');
+   } 
     return (
         <div className='w-50 mx-auto mt-5'>
             <Form onSubmit={handelSubmit}>
@@ -62,9 +72,11 @@ const Login = () => {
                 </Button>
                
                 <p>Don't have an account? <span><Link className='text-decoration-none' to='/singup'>SingUp</Link></span> </p>
+                <p>forget Password? <span><button className='text-decoration-none' onClick={restPassword} >Reset Password</button></span> </p>
                 </Form>
                 {erorrElement}
                 <GoogleLogin></GoogleLogin>
+                <ToastContainer />
         </div>
     );
 };
