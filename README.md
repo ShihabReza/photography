@@ -12,7 +12,9 @@ github Link[https://github.com/programming-hero-web-course-4/independent-service
 
 - You will find it in different photo packages
 - Details about photos can be crowded
-- Find out about the price of the photo package
+- Email can be submitted
+- The password can be reset
+- Let's read the blog
 
 ## use this project
 
